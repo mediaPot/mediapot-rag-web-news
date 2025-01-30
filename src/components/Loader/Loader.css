@@ -1,0 +1,26 @@
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0, 0.6); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000; 
+}
+
+.loader span {
+    text-align: center;
+    position: absolute;
+    font-family:'Courier New', Courier, monospace;
+    font-size: small;
+    font-weight: 500;
+    font-style: italic;
+    color: #d6caca;
+}
+
+.loader span p {
+    margin-top: 100%;
+}

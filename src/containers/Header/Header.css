@@ -1,0 +1,23 @@
+.class-title {
+    display: flex;
+    padding: 0 0 0 1em;
+    font-size: 50px;
+    font-weight: 600;
+    background-image: linear-gradient(to right, rgb(75, 122, 223), rgb(110, 200, 255));
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    font-family: 'Courier New', Courier, monospace;
+    text-shadow: 0px 4px 10px rgba(236, 226, 245, 0.3)
+}
+
+.class-text {
+    color: rgb(75, 122, 223);
+    display: flex;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: normal;
+    font-size: 0.8em;
+    padding-left: 3em;
+    margin-top: 0%;
+    margin-bottom: 5%;
+}
