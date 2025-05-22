@@ -10,7 +10,7 @@ class Header extends React.Component {
   }
 
  async componentDidMount() {
-  fetch("http://143.233.226.88:2008/rag/welcome/")
+  fetch("http://143.233.226.88:2004/rag/welcome-news/")
      .then(response => response.json())
      .then(data => this.setState({ subtitle: data.message }))
  }

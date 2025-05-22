@@ -20,12 +20,12 @@ export class AppPage extends React.Component {
     }
 
     fetch_subset = async (keyword) => {
-        const url = `http://143.233.226.88:2008/rag/llm-summarizer/?query=${keyword}&topN=5`
+        const url = `http://143.233.226.88:2004/rag/llm-summarizer-news/?query=${keyword}&topN=5`
 
         fetch(url)
             .then(response => response.json())
             .then(data => this.setState({ 
-                tweets: data.top_similar_tweets,
+                tweets: data.top_similar_chunks,
                 answer: data.llm_summary,
                 keyword: keyword,
                 loading: false,
@@ -48,9 +48,9 @@ export class AppPage extends React.Component {
             <div className="page-box">
                 <div className="search-box">
                     <div className="label-area">
-                        <p>Enter a question and find the top similar tweets and a summarized answer.</p></div>
+                        <p>Enter a question and find the top similar article news and a summarized answer.</p></div>
                     <div className="search-area">
-                        <p>Ask something (in Greek or in English)</p>
+                        <p>Ask something (in Greek)</p>
                         <input onKeyDown={(e) => {
                             if (e.key === "Enter")
                                 this.handle_key_down(e)
@@ -65,7 +65,7 @@ export class AppPage extends React.Component {
                     {this.state.tweets.length > 0 && <h4>Summarized Answer</h4>}
                          {this.state.tweets.length > 0 && <div className="summarized"><p>{this.state.answer}</p></div> }
 
-                        {this.state.tweets.length > 0 && <h4>Top Similar Tweets</h4>}
+                        {this.state.tweets.length > 0 && <h4>Top similar pieces of text</h4>}
                         <div className="tweets">
                         <ul>
                         {this.state.tweets.map((tweet) => (
@@ -76,7 +76,11 @@ export class AppPage extends React.Component {
                                         {tweet["cosine similarity"].toFixed(2)}
                                     </div>
                                     <div className="tweet-text">
-                                        <p>{tweet.tweet}</p>
+                                    Article: <a href={tweet.url} target="_blank">
+                                        {tweet.headline}
+                                      </a>
+                                      <br />
+                                        <p>{tweet.chunk}</p>
                                     </div>
                                 </div>
                             </li>

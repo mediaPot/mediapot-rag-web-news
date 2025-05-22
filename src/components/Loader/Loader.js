@@ -11,7 +11,7 @@ const Loader = ({ isloading }) => {
         size={100}
         aria-label="Loading Spinner"
         data-testid="loader"
-      /> <span><p>Searching tweets...</p></span>
+      /> <span><p>Searching article news...</p></span>
     </div>
   );
 }
