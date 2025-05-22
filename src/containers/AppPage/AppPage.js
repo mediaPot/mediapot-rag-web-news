@@ -76,7 +76,7 @@ export class AppPage extends React.Component {
                                         {tweet["cosine similarity"].toFixed(2)}
                                     </div>
                                     <div className="tweet-text">
-                                    Article: <a href={tweet.url} target="_blank">
+                                    Article: <a href={tweet.url} target="_blank" rel="noreferrer">
                                         {tweet.headline}
                                       </a>
                                       <br />
